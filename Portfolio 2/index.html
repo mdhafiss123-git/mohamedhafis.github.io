@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Essential inline styles for previews -->
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  transition: background-color 1s ease;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* SECTION COLORS */
+.home {
+  background-color: #f5f5f5;
+}
+
+.about {
+  background-color: #e3f2fd;
+}
+
+.projects {
+  background-color: #f5f5f5;
+}
+
+.contact {
+  background-color: #e3f2fd;
+}
+
+/* PROJECT CARD */
+.project-card {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+  background: linear-gradient(135deg, #020024, #040b2d, #001f3f);
+  color: white;
+}
+.hero-left {
+  max-width: 50%;
+}
+
+.hello {
+  font-size: 18px;
+  opacity: 0.8;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+.hero-left h2 {
+  font-size: 28px;
+}
+
+.hero-left h2 span {
+  color: #00f7ff;
+}
+
+.desc {
+  margin: 20px 0;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+.socials a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #00f7ff;
+  border-radius: 50%;
+  color: #00f7ff;
+  text-decoration: none;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #00f7ff;
+  color: black;
+}
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #00f7ff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.hero-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-glow {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  padding: 10px;
+  background: linear-gradient(45deg, #00f7ff, #9b00ff);
+  box-shadow:
+    0 0 30px #00f7ff,
+    0 0 60px #9b00ff;
+}
+
+.image-glow img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+body {
+  background: #f5f5f5;
+}
+body.night-mode {
+  background: #111111;
+  color: #f5f5f5;
+}.about-section {
+  min-height: 100vh;
+  background: #0a192f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 50px;
+}
+
+.about-container {
+  max-width: 800px;
+  text-align: center;
+}
+
+.about-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00f7ff;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+/* ===== ABOUT SECTION ===== */
+
+.about-section {
+  min-height: 100vh;
+  background: #020c1b;
+  display: flex;
+  align-items: center;
+  padding: 80px 10%;
+  color: white;
+}
+
+.about-wrapper {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+/* IMAGE */
+.about-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00f7ff;
+  box-shadow: 0 0 30px #00f7ff;
+}
+
+/* CONTENT */
+.about-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00f7ff;
+}
+
+.about-content p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  opacity: 0.85;
+}
+
+/* SKILLS */
+.skills {
+  margin-top: 25px;
+}
+
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill span {
+  font-size: 14px;
+}
+
+.bar {
+  background: #112240;
+  height: 8px;
+  border-radius: 10px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #00f7ff;
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+.fill.html { width: 90%; }
+.fill.css { width: 80%; }
+.fill.js { width: 65%; }
+
+/* FADE-IN ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* PROJECTS SECTION */
+.projects-section {
+  min-height: 100vh;
+  background: #112240;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color:darkgray
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project-card {
+  background: white;
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid #00f7ff;
+  color: #00f7ff;
+}
+
+.outline:hover {
+  background: #00f7ff;
+  color: white;
+}
+
+/* SKILLS SECTION */
+.skills-section {
+  min-height: 100vh;
+  background: #020c1b;
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.skill-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(#00f7ff 0deg, #112240 0deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 1.5s ease;
+  box-shadow:
+    0 0 20px #00f7ff,
+    0 0 40px #9b00ff;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #0a192f;
+}
+
+.inner-circle {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: #112240;
+  color: white;
+}
+
+.percent {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00f7ff;
+}
+
+.skill-name {
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+/* contact section */
+.contact {
+  min-height: 99vh;
+  background: #0a192f;
+  padding: 80px 10%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+.contact p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color:darkgray
+}
+
+/* MODAL STYLES */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background-color: #112240;
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #00f7ff;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  color: white;
+  box-shadow: 0 0 30px #00f7ff;
+}
+
+.close {
+  color: #00f7ff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #9b00ff;
+}
+
+.modal-content h2 {
+  color: #00f7ff;
+  margin-bottom: 20px;
+}
+
+.modal-content h3 {
+  color: #00f7ff;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.modal-content ul {
+  margin-left: 20px;
+}
+
+.modal-content li {
+  margin-bottom: 5px;
+}
+  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+  <script>try{localStorage.setItem('theme','light')}catch(e){};</script>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button id="theme-toggle" aria-label="Toggle theme" aria-pressed="true" aria-checked="true" role="switch" title="Switch to default">
+      <span class="icon icon-moon" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="icon icon-sun" aria-hidden="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.76 4.84l-1.8-1.79L3.17 4.83l1.79 1.79 1.8-1.78zM1 13h3v-2H1v2zm10 8h2v-3h-2v3zM17.24 19.16l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM12 5a7 7 0 100 14 7 7 0 000-14zm0-5h-2v3h2V0zM4.22 4.22L2.81 5.63 4.6 7.42l1.41-1.41L4.22 4.22z" fill="currentColor"/>
+        </svg>
+      </span>
+    </button>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="hero">
+    <div class="stars" aria-hidden="true"></div>
+  <div class="hero-left">
+    <p class="hello">Hello, I'm Mohamed Hafis</p>
+
+    <h1>Mohamed Hafis</h1>
+
+    <h2>And I'm a <span>Frontend Developer</span></h2>
+
+    <p class="desc">
+      I am a Web Designer with experience in HTML, CSS and JavaScript.
+    </p>
+
+    <div class="socials">
+      <a href="#">F</a>
+      <a href="#">T</a>
+      <a href="#">I</a>
+      <a href="#">L</a>
+    </div>
+
+    <button class="btn">More About Me</button>
+  </div>
+
+  <div class="hero-right">
+    <div class="image-glow">
+      <div class="glow-ring" aria-hidden="true"></div>
+      <img src="assets/images/myphoto.jpg" alt="profile">
+    </div>
+  </div>
+</section>
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+
+  <div class="about-container">
+
+    <div class="about-text">
+      <h2>About Me</h2>
+
+      <p>
+        I am a passionate Frontend Developer who enjoys building clean,
+        responsive, and user-friendly websites.
+      </p>
+
+      <p>
+        I am focus on creating modern designs using HTML, CSS, and JavaScript,
+        while continuously learning new technologies to improve my skills.
+      </p>
+
+    </div>
+
+  </div>
+  
+
+</section>
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section reveal">
+
+  <h2 class="section-title">Projects</h2>
+
+  <div class="projects-container">
+
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x200/00f7ff/ffffff?text=Portfolio+Website" alt="Project 1">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio built using HTML, CSS and JavaScript.</p>
+      <div class="project-buttons">
+        <a href="#" class="btn" onclick="openModal('portfolio-modal')">Live Demo</a>
+        <a href="https://github.com/yourusername/portfolio" class="btn outline" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <img src="https://via.placeholder.com/300x200/9b00ff/ffffff?text=Landing+Page" alt="Project 2">
+      <h3>Landing Page</h3>
+      <p>Responsive landing page with modern UI design.</p>
+      <div class="project-buttons">
+        <a href="#" class="btn" onclick="openModal('landing-modal')">Live Demo</a>
+        <a href="https://github.com/yourusername/landing-page" class="btn outline" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section reveal">
+    <h2 class="section-title">Learning Progress</h2>
+    <div class="skills-container">
+      <div class="skill-circle">
+        <div class="circle" data-percent="20">
+          <div class="inner-circle">
+            <span class="percent">20%</span>
+            <span class="skill-name">Python</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-circle">
+        <div class="circle" data-percent="20">
+          <div class="inner-circle">
+            <span class="percent">20%</span>
+            <span class="skill-name">Deep Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-circle">
+        <div class="circle" data-percent="10">
+          <div class="inner-circle">
+            <span class="percent">10%</span>
+            <span class="skill-name">Artificial Intelligence</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-circle">
+        <div class="circle" data-percent="10">
+          <div class="inner-circle">
+            <span class="percent">10%</span>
+            <span class="skill-name">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="skill-circle">
+        <div class="circle" data-percent="10">
+          <div class="inner-circle">
+            <span class="percent">10%</span>
+            <span class="skill-name">Data Science</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MODALS -->
+  <div id="portfolio-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Portfolio Website</h2>
+      <p>This is my personal portfolio website showcasing my skills and projects. Built with modern web technologies.</p>
+      <h3>Technologies Used:</h3>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+      </ul>
+      <h3>Features:</h3>
+      <ul>
+        <li>Responsive design</li>
+        <li>Smooth animations</li>
+        <li>Interactive elements</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="landing-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Landing Page</h2>
+      <p>A responsive landing page with modern UI design, perfect for business promotions and lead generation.</p>
+      <h3>Technologies Used:</h3>
+      <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+      </ul>
+      <h3>Features:</h3>
+      <ul>
+        <li>Modern UI/UX</li>
+        <li>Mobile responsive</li>
+        <li>Call-to-action buttons</li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <h2>Contact</h2>
+    <p>Email:mdhafiss123@gmail.com</p>
+    <p>Instagram: @_hafis_h_</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Mohamed Hafis
+  </footer>
+
+  <!-- JS -->
+  <script>
+const sections = document.querySelectorAll("section[id]");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop - sectionHeight / 2) {
+      current = section.id;
+    }
+  });
+
+  switch (current) {
+    case "home":
+      document.body.style.backgroundColor = "#f5f5f5";
+      break;
+    case "about":
+      document.body.style.backgroundColor = "#e3f2fd";
+      break;
+    case "skills":
+      document.body.style.backgroundColor = "#f3e5f5";
+      break;
+    case "projects":
+      document.body.style.backgroundColor = "#fce4ec";
+      break;
+    case "contact":
+      document.body.style.backgroundColor = "#e8f5e9";
+      break;
+  }
+});
+window.addEventListener("scroll", () => {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach(section => {
+    const windowHeight = window.innerHeight;
+    const revealTop = section.getBoundingClientRect().top;
+
+    if (revealTop < windowHeight - 100) {
+      section.classList.add("active");
+    }
+  });
+});
+
+// Skill circles animation
+window.addEventListener("scroll", () => {
+  const skillSection = document.querySelector("#skills");
+  const circles = document.querySelectorAll(".circle");
+
+  if (skillSection) {
+    const sectionTop = skillSection.offsetTop;
+    const sectionHeight = skillSection.clientHeight;
+    const scrollY = window.scrollY;
+
+    if (scrollY >= sectionTop - window.innerHeight / 2 && scrollY < sectionTop + sectionHeight) {
+      circles.forEach(circle => {
+        const percent = circle.getAttribute("data-percent");
+        circle.style.background = `conic-gradient(#00f7ff ${percent * 3.6}deg, #112240 0deg)`;
+      });
+    }
+  }
+});
+
+// Modal functions
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+}
+
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = "none";
+  document.body.style.overflow = "auto"; // Restore scrolling
+}
+
+// Close modal when clicking outside or on close button
+window.onclick = function(event) {
+  if (event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+}
+
+// Close modal with ESC key
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape') {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (modal.style.display === 'block') {
+        modal.style.display = 'none';
+        document.body.style.overflow = "auto";
+      }
+    });
+  }
+});
+
+// Add event listeners to close buttons
+document.addEventListener('DOMContentLoaded', function() {
+  const closeButtons = document.querySelectorAll('.close');
+  closeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const modal = button.closest('.modal');
+      modal.style.display = 'none';
+      document.body.style.overflow = "auto";
+    });
+  });
+});
+  </script>
+  <script src="js/script.js"></script>
+</body>
+</html>
